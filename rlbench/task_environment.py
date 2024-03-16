@@ -120,7 +120,7 @@ class TaskEnvironment(object):
             if self._dataset_root is None or len(self._dataset_root) == 0:
                 raise RuntimeError(
                     "Can't ask for stored demo when no dataset root provided.")
-            demos = utils.get_stored_demos(
+            demos = utils.get_stored_demos_v2(
                 amount, image_paths, self._dataset_root, self._variation_number,
                 self._task.get_name(), self._obs_config,
                 random_selection, from_episode_number)

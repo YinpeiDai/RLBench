@@ -56,16 +56,16 @@ class Observation(object):
         self.front_rgb = front_rgb
         self.front_depth = front_depth
         self.front_mask = front_mask
-        self.front_point_cloud = front_point_cloud
-        self.joint_velocities = joint_velocities
-        self.joint_positions = joint_positions
-        self.joint_forces = joint_forces
-        self.gripper_open = gripper_open
-        self.gripper_pose = gripper_pose
-        self.gripper_matrix = gripper_matrix
-        self.gripper_joint_positions = gripper_joint_positions
-        self.gripper_touch_forces = gripper_touch_forces
-        self.task_low_dim_state = task_low_dim_state
+        self.front_point_cloud = front_point_cloud # (128, 128, 3)
+        self.joint_velocities = joint_velocities    
+        self.joint_positions = joint_positions  # shape (7,)
+        self.joint_forces = joint_forces    # shape (7,)
+        self.gripper_open = gripper_open  # 0.0 or 1.0
+        self.gripper_pose = gripper_pose  # shape (7,) why?
+        self.gripper_matrix = gripper_matrix    # shape (4, 4)
+        self.gripper_joint_positions = gripper_joint_positions # max 0.04?, shape (2,)
+        self.gripper_touch_forces = gripper_touch_forces    # shape (6,)
+        self.task_low_dim_state = task_low_dim_state    # shape (101,)
         self.ignore_collisions = ignore_collisions
         self.misc = misc
 
