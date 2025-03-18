@@ -86,7 +86,7 @@ class JointPosition(ArmActionMode):
         """
         self._absolute_mode = absolute_mode
 
-    def action(self, scene: Scene, action: np.ndarray):
+    def action(self, scene: Scene, action: np.ndarray, ignore_collisions: bool = False):
         assert_action_shape(action, self.action_shape(scene))
         a = action if self._absolute_mode else np.array(
             scene.robot.arm.get_joint_positions()) + action
